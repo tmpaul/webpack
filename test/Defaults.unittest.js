@@ -119,6 +119,7 @@ describe("snapshots", () => {
 		  "loader": Object {
 		    "environment": Object {
 		      "arrowFunction": true,
+		      "asyncFunction": true,
 		      "bigIntLiteral": undefined,
 		      "const": true,
 		      "destructuring": true,
@@ -341,6 +342,7 @@ describe("snapshots", () => {
 		    ],
 		    "environment": Object {
 		      "arrowFunction": true,
+		      "asyncFunction": true,
 		      "bigIntLiteral": undefined,
 		      "const": true,
 		      "destructuring": true,
@@ -373,6 +375,7 @@ describe("snapshots", () => {
 		    "scriptType": false,
 		    "sourceMapFilename": "[file].map[query]",
 		    "sourcePrefix": undefined,
+		    "strictModuleErrorHandling": false,
 		    "strictModuleExceptionHandling": false,
 		    "trustedTypes": undefined,
 		    "uniqueName": "webpack",
@@ -2020,6 +2023,7 @@ describe("snapshots", () => {
 			+   "context": "<cwd>/test/fixtures/browserslist",
 			@@ ... @@
 			-       "arrowFunction": true,
+			-       "asyncFunction": true,
 			-       "bigIntLiteral": undefined,
 			-       "const": true,
 			-       "destructuring": true,
@@ -2031,6 +2035,7 @@ describe("snapshots", () => {
 			-       "optionalChaining": true,
 			-       "templateLiteral": true,
 			+       "arrowFunction": false,
+			+       "asyncFunction": false,
 			+       "bigIntLiteral": false,
 			+       "const": false,
 			+       "destructuring": false,
@@ -2049,6 +2054,7 @@ describe("snapshots", () => {
 			+     "devtoolNamespace": "browserslist-test",
 			@@ ... @@
 			-       "arrowFunction": true,
+			-       "asyncFunction": true,
 			-       "bigIntLiteral": undefined,
 			-       "const": true,
 			-       "destructuring": true,
@@ -2060,6 +2066,7 @@ describe("snapshots", () => {
 			-       "optionalChaining": true,
 			-       "templateLiteral": true,
 			+       "arrowFunction": false,
+			+       "asyncFunction": false,
 			+       "bigIntLiteral": false,
 			+       "const": false,
 			+       "destructuring": false,
@@ -2203,11 +2210,11 @@ describe("snapshots", () => {
 			-     "css": undefined,
 			-     "futureDefaults": false,
 			+     "cacheUnaffected": true,
-			+     "css": Object {
-			+       "exportsOnly": false,
-			+     },
+			+     "css": true,
 			+     "futureDefaults": true,
 			@@ ... @@
+			+       },
+			+       Object {
 			+         "rules": Array [
 			+           Object {
 			+             "descriptionData": Object {
@@ -2227,7 +2234,7 @@ describe("snapshots", () => {
 			+           Object {
 			+             "descriptionData": Object {
 			+               "type": "module",
-			+             },
+			@@ ... @@
 			+             "resolve": Object {
 			+               "fullySpecified": true,
 			+             },
@@ -2235,29 +2242,19 @@ describe("snapshots", () => {
 			+         ],
 			+         "type": "webassembly/async",
 			+       },
-			+       Object {
-			+         "oneOf": Array [
-			+           Object {
-			+             "resolve": Object {
-			+               "fullySpecified": true,
-			+             },
-			+             "test": /\\.module\\.css$/i,
-			+             "type": "css/module",
-			+           },
-			+           Object {
-			+             "resolve": Object {
-			+               "fullySpecified": true,
-			+               "preferRelative": true,
-			+             },
-			+             "type": "css",
-			+           },
-			+         ],
+			@@ ... @@
+			+         "resolve": Object {
+			+           "fullySpecified": true,
+			+           "preferRelative": true,
+			+         },
 			+         "test": /\\.css$/i,
+			+         "type": "css/auto",
 			+       },
 			+       Object {
 			+         "mimetype": "text/css+module",
 			+         "resolve": Object {
 			+           "fullySpecified": true,
+			+           "preferRelative": true,
 			+         },
 			+         "type": "css/module",
 			+       },
@@ -2270,6 +2267,13 @@ describe("snapshots", () => {
 			+         "type": "css",
 			+       },
 			+       Object {
+			@@ ... @@
+			-     "generator": Object {},
+			+     "generator": Object {
+			+       "css": Object {
+			+         "exportsOnly": false,
+			+       },
+			+     },
 			@@ ... @@
 			+         "exportsPresence": "error",
 			@@ ... @@

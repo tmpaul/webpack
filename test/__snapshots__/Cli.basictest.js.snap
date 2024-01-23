@@ -633,19 +633,6 @@ Object {
     "multiple": false,
     "simpleType": "boolean",
   },
-  "experiments-css-exports-only": Object {
-    "configs": Array [
-      Object {
-        "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
-        "multiple": false,
-        "path": "experiments.css.exportsOnly",
-        "type": "boolean",
-      },
-    ],
-    "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
-    "multiple": false,
-    "simpleType": "boolean",
-  },
   "experiments-future-defaults": Object {
     "configs": Array [
       Object {
@@ -1426,6 +1413,58 @@ Object {
     "multiple": false,
     "simpleType": "string",
   },
+  "module-generator-css-auto-exports-only": Object {
+    "configs": Array [
+      Object {
+        "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+        "multiple": false,
+        "path": "module.generator.css/auto.exportsOnly",
+        "type": "boolean",
+      },
+    ],
+    "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-generator-css-exports-only": Object {
+    "configs": Array [
+      Object {
+        "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+        "multiple": false,
+        "path": "module.generator.css.exportsOnly",
+        "type": "boolean",
+      },
+    ],
+    "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-generator-css-global-exports-only": Object {
+    "configs": Array [
+      Object {
+        "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+        "multiple": false,
+        "path": "module.generator.css/global.exportsOnly",
+        "type": "boolean",
+      },
+    ],
+    "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "module-generator-css-module-exports-only": Object {
+    "configs": Array [
+      Object {
+        "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+        "multiple": false,
+        "path": "module.generator.css/module.exportsOnly",
+        "type": "boolean",
+      },
+    ],
+    "description": "Avoid generating and loading a stylesheet and only embed exports from css into output javascript files.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
   "module-no-parse": Object {
     "configs": Array [
       Object {
@@ -1813,6 +1852,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -1833,6 +1873,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -2580,6 +2621,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -2600,6 +2642,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -3213,6 +3256,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -3233,6 +3277,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -3696,6 +3741,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -3716,6 +3762,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -4808,6 +4855,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -4828,6 +4876,7 @@ Object {
           true,
           "warn-mock",
           "mock",
+          "node-module",
           "eval-only",
         ],
       },
@@ -5979,6 +6028,19 @@ Object {
       },
     ],
     "description": "The environment supports arrow functions ('() => { ... }').",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "output-environment-async-function": Object {
+    "configs": Array [
+      Object {
+        "description": "The environment supports async function and await ('async function () { await ... }').",
+        "multiple": false,
+        "path": "output.environment.asyncFunction",
+        "type": "boolean",
+      },
+    ],
+    "description": "The environment supports async function and await ('async function () { await ... }').",
     "multiple": false,
     "simpleType": "boolean",
   },
@@ -8304,6 +8366,38 @@ Object {
       },
     ],
     "description": "Use timestamps of the files/directories to determine invalidation.",
+    "multiple": false,
+    "simpleType": "boolean",
+  },
+  "snapshot-unmanaged-paths": Object {
+    "configs": Array [
+      Object {
+        "description": "A RegExp matching an unmanaged directory.",
+        "multiple": true,
+        "path": "snapshot.unmanagedPaths[]",
+        "type": "RegExp",
+      },
+      Object {
+        "description": "A path to an unmanaged directory.",
+        "multiple": true,
+        "path": "snapshot.unmanagedPaths[]",
+        "type": "path",
+      },
+    ],
+    "description": "A RegExp matching an unmanaged directory. A path to an unmanaged directory.",
+    "multiple": true,
+    "simpleType": "string",
+  },
+  "snapshot-unmanaged-paths-reset": Object {
+    "configs": Array [
+      Object {
+        "description": "Clear all items provided in 'snapshot.unmanagedPaths' configuration. List of paths that are not managed by a package manager and the contents are subject to change.",
+        "multiple": false,
+        "path": "snapshot.unmanagedPaths",
+        "type": "reset",
+      },
+    ],
+    "description": "Clear all items provided in 'snapshot.unmanagedPaths' configuration. List of paths that are not managed by a package manager and the contents are subject to change.",
     "multiple": false,
     "simpleType": "boolean",
   },
